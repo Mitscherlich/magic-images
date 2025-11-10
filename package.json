@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "bin": {
-    "magic-images": "./bin/magic-images.js"
+    "magic-images": "./dist/cli.js"
   },
   "exports": {
     ".": {
@@ -15,7 +15,6 @@
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
   "files": [
-    "bin",
     "dist"
   ],
   "scripts": {
@@ -24,7 +23,7 @@
     "format": "prettier --write .",
     "lint": "eslint .",
     "test": "vitest run",
-    "cli": "node ./bin/magic-images.js"
+    "cli": "node ./dist/cli.js"
   },
   "dependencies": {
     "archiver": "^7.0.1",

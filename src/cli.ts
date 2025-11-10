@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import { convertImages } from '../dist/index.js';
+import { convertImages } from './index.js';
 
 // Define the CLI
 program
@@ -22,7 +22,11 @@ program
     try {
       await convertImages(path, options);
     } catch (error) {
-      console.error('Error:', error.message);
+      if (error instanceof Error) {
+        console.error('Error:', error.message);
+      } else {
+        console.error('Error:', String(error));
+      }
       process.exit(1);
     }
   });

@@ -2,8 +2,8 @@ import * as fsPromises from 'fs/promises';
 import * as path from 'path';
 import * as readline from 'readline';
 import { createWriteStream } from 'fs';
-import Sharp from 'sharp';
-import Archiver from 'archiver';
+import sharp from 'sharp';
+import archiver from 'archiver';
 
 export interface ConvertOptions {
   format: string;
@@ -99,7 +99,7 @@ async function confirmAction(message: string): Promise<boolean> {
  * Converts an image to specified format
  */
 async function convertImage(inputPath: string, outputPath: string, format: string, quality: number): Promise<void> {
-  const image = Sharp(inputPath);
+  const image = sharp(inputPath);
   
   let outputOptions = {};
   if (format === 'jpg' || format === 'jpeg') {
@@ -190,7 +190,7 @@ async function processDirectory(currentDir: string, baseInputDir: string, output
  */
 async function createZipArchive(sourceDir: string, outputPath: string): Promise<void> {
   const output = createWriteStream(outputPath);
-  const archive = Archiver('zip', {
+  const archive = archiver('zip', {
     zlib: { level: 9 } // Sets the compression level
   });
 

@@ -2,12 +2,10 @@ import { defineConfig } from '@rslib/core';
 
 export default defineConfig({
   source: {
-    // entry: {
-    //   index: [
-    //     './src/**/*.ts',
-    //     '!./src/**/*.test.ts',
-    //   ],
-    // },
+    entry: {
+      index: './src/index.ts',
+      cli: './src/cli.ts',
+    },
     exclude: ['./src/**/*.test.ts'],
   },
   lib: [
