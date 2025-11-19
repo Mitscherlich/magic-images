@@ -16,3 +16,4 @@ storybook-static
 # Test files
 input/
 output/
+*.zip

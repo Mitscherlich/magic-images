@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 import { program } from 'commander';
-import { convertImages } from './index.js';
+import { convertImages } from './commands/convert/index.js';
 
 // Define the CLI
 program
